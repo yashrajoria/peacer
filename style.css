@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Oregano&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Oregano', cursive;
+  color: whitesmoke;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  background: url('./images/1.jpg') no-repeat center center/cover;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-size: 25px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  transform: scale(1);
+}
+
+.circle {
+  background-color: #01001F;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  align-items: center;
+}
+
+.gradient-circle {
+  background: conic-gradient(
+    #183467 0%,
+    #01001F 40%,
+    #FFF 40%,
+    #FFF 60%,
+    #353E73 60%,
+    #414C80 100%
+  );
+  height: 320px;
+  width: 320px;
+  z-index: -2;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+.pointer {
+  background-color: cornsilk;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: block;
+}
+
+
+.pointer-container {
+  position: absolute;
+  top: -40px;
+  left: 140px;
+  width: 20px;
+  height: 190px;
+  animation: rotate 7.5s linear forwards infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container.expand {
+  animation: expand 3s linear forwards;
+}
+
+@keyframes expand {
+  from{
+    transform: scale(1);
+  }
+
+  to{
+    transform: scale(1.2);
+  }
+}
+
+
+.container.collapse {
+  animation: collapse 3s linear forwards;
+}
+
+@keyframes collapse {
+  from {
+    transform: scale(1.2)
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.player {
+  display: none;
+}
